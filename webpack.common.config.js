@@ -1,10 +1,10 @@
 module.exports = {
-  entry: './tmp/text_marker_tsv.js',
+  entry: './tmp/tsv.js',
   output: {
-    library: 'textMarker',
+    filename: './dist/text_marker_tsv.js',
+    library: 'textMarkerTsv',
     libraryTarget: 'umd',
     libraryExport: 'default',
     path: __dirname,
-    filename: './dist/text_marker.js',
   }
 };

@@ -1,18 +1,10 @@
-
-const tableStart = '[[TABLE]]';
-const tableEnd = '[[/TABLE]]';
-const rowStart = '[[TABLE_ROW]]';
-const rowEnd = '[[/TABLE_ROW]]';
-const cellStart = '[[TABLE_CELL]]';
-const cellEnd = '[[/TABLE_CELL]]';
-
 export const placeholderText = {
-  tableStart,
-  tableEnd,
-  rowStart,
-  rowEnd,
-  cellStart,
-  cellEnd
+  tableStart: '[[TABLE]]',
+  tableEnd: '[[/TABLE]]',
+  rowStart: '[[TABLE_ROW]]',
+  rowEnd: '[[/TABLE_ROW]]',
+  cellStart: '[[TABLE_CELL]]',
+  cellEnd: '[[/TABLE_CELL]]',
 };
 
 export default function tsv(text, placeholders = placeholderText) {

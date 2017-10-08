@@ -7,6 +7,7 @@ const version = require('./package.json').version;
 const prod = {
   devtool: 'cheap-module-source-map',
   output: {
+    filename: './dist/text_marker_tsv.js',    
     auxiliaryComment: { root: `Text Marker TSV middleware version ${version}` },
   },
   plugins: [
