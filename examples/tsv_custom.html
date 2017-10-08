@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Text Marker TSV Middleware Example</title>
+    <link href="style.css" rel="stylesheet" />    
+  </head>
+  <body>
+    <h2>Text Marker TSV Middleware Example</h2>
+    <pre id="output"></div>
+    <script src='text_marker.js'></script>
+    <script src='../dist/text_marker_tsv.js'></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        let tsvChars = {
+          tableStart: '[[MY_TABLE]]',
+          tableEnd: '[[/MY_TABLE]]',
+          rowStart: '[[MY_TABLE_ROW]]',
+          rowEnd: '[[/MY_TABLE_ROW]]',
+          cellStart: '[[MY_TABLE_CELL]]',
+          cellEnd: '[[/MY_TABLE_CELL]]',
+        };
+        
+        function myCustomTSVChars(text) {
+          return textMarkerTsv(text, tsvChars);
+        }
+
+        let rules = [
+          textMarker.block({ open: tsvChars.tableStart, close: tsvChars.tableEnd }, 'TABLE'),
+          textMarker.block({ open: tsvChars.rowStart, close: tsvChars.rowEnd }, 'TABLE_ROW'),
+          textMarker.block({ open: tsvChars.cellStart, close: tsvChars.cellEnd }, 'TABLE_CELL')
+        ];
+        let tokens = textMarker.parse('c1r1\tc2r1', rules, [myCustomTSVChars]);
+
+        document.getElementById('output').innerText = JSON.stringify(tokens, null, '  ');
+      });
+    </script>
+  </body>
+</html>
