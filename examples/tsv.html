@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Text Marker TSV Middleware Example</title>
+    <link href="style.css" rel="stylesheet" />    
+  </head>
+  <body>
+    <h2>Text Marker TSV Middleware Example</h2>
+    <pre id="output"></div>
+    <script src='text_marker.js'></script>
+    <script src='../dist/text_marker_tsv.js'></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        let rules = [
+          textMarker.block({ open: '[[TABLE]]', close: '[[/TABLE]]' }, 'TABLE'),
+          textMarker.block({ open: '[[TABLE_ROW]]', close: '[[/TABLE_ROW]]' }, 'TABLE_ROW'),
+          textMarker.block({ open: '[[TABLE_CELL]]', close: '[[/TABLE_CELL]]' }, 'TABLE_CELL')
+        ];
+        let tokens = textMarker.parse('c1r1\tc2r1', rules, [textMarkerTsv]);
+
+        document.getElementById('output').innerText = JSON.stringify(tokens, null, '  ');
+      });
+    </script>
+  </body>
+</html>
