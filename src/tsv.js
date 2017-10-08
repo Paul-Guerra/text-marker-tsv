@@ -1,4 +1,4 @@
-export const placeholderText = {
+const placeholderText = {
   tableStart: '[[TABLE]]',
   tableEnd: '[[/TABLE]]',
   rowStart: '[[TABLE_ROW]]',
