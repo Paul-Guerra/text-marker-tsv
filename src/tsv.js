@@ -24,7 +24,7 @@ export default function tsv(text, placeholders = placeholderText) {
       if (index === arr.length - 1) {
         result += line;
       } else {
-        result += `${line}\n`;
+        result += line === '\n' ? line : `${line}\n`;
       }
       return;
     }
@@ -40,8 +40,8 @@ export default function tsv(text, placeholders = placeholderText) {
       newLine = tableStart + newLine;
       inTable = true;
     }
-    // if this is the last line close the table
-    if (index === arr.length - 1) newLine += tableEnd;
+    
+    if (index === arr.length - 1) newLine += tableEnd; // if this is the last line close the table
     if (arr[index + 1] === '' && arr[index + 1].length === 0) newLine += tableEnd;
     if (arr[index + 1] && arr[index + 1].indexOf('\t') === -1) newLine += `${tableEnd}\n`;
     result += newLine;
