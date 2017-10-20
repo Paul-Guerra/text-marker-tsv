@@ -1,7 +1,7 @@
 {
   "name": "text-marker-tsv",
   "version": "0.9.0",
-  "description": "A middleware helper function for the Text Markerlexical parser.",
+  "description": "A middleware helper function for the Text Marker lexical parser.",
   "main": "dist/text_marker_tsv.js",
   "repository": {
     "type": "git",
