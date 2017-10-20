@@ -20,6 +20,10 @@ export default {
     input: 'bar\n\nc1r1\tc2r1\nbaz\nbiz',
     output: 'bar\n\n[[TABLE]][[TABLE_ROW]][[TABLE_CELL]]c1r1[[/TABLE_CELL]][[TABLE_CELL]]c2r1[[/TABLE_CELL]][[/TABLE_ROW]][[/TABLE]]\nbaz\nbiz'
   },
+  emptyLineAfter: {
+    input: 'bar\nc1r1\tc2r1\n\nbaz',
+    output: 'bar\n[[TABLE]][[TABLE_ROW]][[TABLE_CELL]]c1r1[[/TABLE_CELL]][[TABLE_CELL]]c2r1[[/TABLE_CELL]][[/TABLE_ROW]][[/TABLE]]\n\nbaz'
+  },
   threeRows: {
     input: 'c1r1\tc2r1\nc1r2\tc2r2\nc1r3\tc2r3',
     output: '[[TABLE]][[TABLE_ROW]][[TABLE_CELL]]c1r1[[/TABLE_CELL]][[TABLE_CELL]]c2r1[[/TABLE_CELL]][[/TABLE_ROW]][[TABLE_ROW]][[TABLE_CELL]]c1r2[[/TABLE_CELL]][[TABLE_CELL]]c2r2[[/TABLE_CELL]][[/TABLE_ROW]][[TABLE_ROW]][[TABLE_CELL]]c1r3[[/TABLE_CELL]][[TABLE_CELL]]c2r3[[/TABLE_CELL]][[/TABLE_ROW]][[/TABLE]]'

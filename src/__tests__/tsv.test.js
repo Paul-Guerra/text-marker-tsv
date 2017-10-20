@@ -34,8 +34,12 @@ describe('tsv()', () => {
   it('ends table when the next line has no tabs', () => {
     expect(tsv(stubs.textAfter.input)).toBe(stubs.textAfter.output);
   });
-  
+
   it('preserves line breaks before a table', () => {
     expect(tsv(stubs.emptyLineBefore.input)).toBe(stubs.emptyLineBefore.output);
+  });
+
+  it('preserves line breaks following a table', () => {
+    expect(tsv(stubs.emptyLineAfter.input)).toBe(stubs.emptyLineAfter.output);
   });
 });
