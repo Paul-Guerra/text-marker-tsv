@@ -31,7 +31,7 @@ export default function tsv(text, placeholders = placeholderText) {
 
     let newLine = '';
     line.split(delimiter).forEach((content) => {
-      newLine += cellStart + content + cellEnd;
+      newLine += `${cellStart} ${content} ${cellEnd}`;
     });
 
     newLine = `${rowStart}${newLine}${rowEnd}`;
